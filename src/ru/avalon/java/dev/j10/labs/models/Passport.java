@@ -1,5 +1,8 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import java.time.LocalDateTime;
+import javax.print.DocFlavor;
+
 /**
  * Представление о паспортных данных человека.
  * <p>
@@ -15,7 +18,33 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
+public class Passport {
+       private int passportNumber;
+       private String firstName;
+       private String lastName;
+       private String middleName;
+       private String secondName;
+       private LocalDateTime birthday;
+       private LocalDateTime dateOFissue;
+       private String service;
+       
+       public Passport (int passportNumber, String firstName, String lastName, String middleName,String secondName, LocalDateTime birthday, LocalDateTime dateOFissue, String service){
+           this.passportNumber = passportNumber;
+           this.firstName = firstName;
+           this.lastName = lastName;
+           this.middleName = middleName;
+           this.secondName = secondName;
+           this.birthday = birthday;
+           this.dateOFissue = dateOFissue;
+           this.service = service;
+        }
+       
+      // public String getPassportDescription (){
+           
+       //}
+       
+       
+    
 
     /*
      * TODO(Студент): Закончить определение класса.
@@ -34,7 +63,12 @@ class Passport {
      * 4. Помните о возможности существования перегруженных
      *    конструкторов.
      *
-     * 5. Обеспечте возможность использования класса за
+     * 5. Обеспечьте возможность использования класса за
      *    пределами пакета.
      */
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
 }
