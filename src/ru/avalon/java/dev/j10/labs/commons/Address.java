@@ -24,7 +24,9 @@ public class Address {
              this.street = street;
              this.number = number;
          }
-          public String getAddressDescription (){
+        
+         @Override
+          public String toString (){
              return "Town - " + town + ", Street - " + street + ", Number - " + number;
-         }
+          }
 }
