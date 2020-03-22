@@ -1,8 +1,8 @@
 package ru.avalon.java.dev.j10.labs.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import javax.print.DocFlavor;
-
+import ru.avalon.java.dev.j10.labs.models.Person;
 /**
  * Представление о паспортных данных человека.
  * <p>
@@ -20,32 +20,22 @@ import javax.print.DocFlavor;
  */
 public class Passport {
        private int passportNumber;
-       private String firstName;
-       private String lastName;
-       private String middleName;
-       private String secondName;
-       private LocalDateTime birthday;
-       private LocalDateTime dateOFissue;
+       private LocalDate birthday;
+       private LocalDate dateOFissue;
        private String service;
-       
-       public Passport (int passportNumber, String firstName, String lastName, String middleName,String secondName, LocalDateTime birthday, LocalDateTime dateOFissue, String service){
+       private Person person;
+        
+       public Passport (Person person, int passportNumber, LocalDate birthday, LocalDate dateOFissue, String service){
+           this(passportNumber, birthday, dateOFissue, service);
+           this.person = person;
+       }        
+       public Passport (int passportNumber, LocalDate birthday, LocalDate dateOFissue, String service){
            this.passportNumber = passportNumber;
-           this.firstName = firstName;
-           this.lastName = lastName;
-           this.middleName = middleName;
-           this.secondName = secondName;
            this.birthday = birthday;
            this.dateOFissue = dateOFissue;
            this.service = service;
-        }
-       
-      // public String getPassportDescription (){
-           
-       //}
-       
-       
+       }
     
-
     /*
      * TODO(Студент): Закончить определение класса.
      *
@@ -66,9 +56,8 @@ public class Passport {
      * 5. Обеспечьте возможность использования класса за
      *    пределами пакета.
      */
-
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Passport №" + passportNumber + "; Date of birth: " + birthday + "; Date of issue: " + dateOFissue + "; Place of issue: " + service + " ";  //To change body of generated methods, choose Tools | Templates.
     }
 }
