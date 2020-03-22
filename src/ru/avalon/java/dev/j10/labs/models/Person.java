@@ -1,7 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
-import ru.avalon.java.dev.j10.labs.models.Passport;
-import ru.avalon.java.dev.j10.labs.models.Building;
+
 import ru.avalon.java.dev.j10.labs.commons.Address;
+import ru.avalon.java.dev.j10.labs.models.Passport;
 /**
  * Представление о человеке.
  * <p>
@@ -14,35 +14,54 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  * </ol>
  */
 public class Person {
-    private String FullName;
-    private String Passport;
-    private String Address;
-            
+    private String firstName;
+    private String lastName;
+    private String middleName;
+    private String secondName;
+    private String fullName;
+    private Address registration;
+    private Passport passport;
+    
+         
+    public Person (String firstName, String middleName, String secondName, String lastName, Passport passport, Address registration){
+        this(firstName, middleName, secondName, lastName);
+        this.passport = passport;
+        this.registration = registration;
+        
+    }    
+       public Person (String firstName, String middleName, String secondName, String lastName){
+           this.firstName = firstName;
+           this.lastName = lastName;
+           this.middleName = middleName;
+           this.secondName = secondName;
+       }
+       
     /**
-     * Возврвщает полное имя человека.
+     * Возвращает полное имя человека.
      * <p>
-     * Если у человека есть Имя, Фамилия и Отчество, то
+     * Должен быть метод, возвращающие полное имя человека в нужном формате 
+     * одной строкой. Если у человека есть Имя, Фамилия и Отчество, то
      * возвращет Имя, Фимилию и Отчество, разделённые пробелом.
      * <p>
-     * Если у человека нет Отчества, но есть второе имя, то
-     * возвращает Имя, Первую букву второго имени, и Фамилию,
-     * разделённые пробелом. После Инициала второго имени
-     * должна стоять точка. Например, "Джером К. Джером".
+     * Если у человека есть второе имя, полное имя выводится
+     * в формате Имя Второе имя Фамилия.
      * <p>
-     * Если у человека нет ни Отчества ни Второго имени, а
-     * есть только Имя и Фамилия, то возвращает их, разделённые
-     * пробелом.
      *
      * @return имя человека в виде строки.
      */
-    public String getFullName() {
-        
+       
+    String str = " ";
+    public String getfullName(Person o) {
+        if (o.middleName.equals(str)) {
+            return fullName = firstName + " " + secondName + " " + lastName;
+           }
+           else return fullName = lastName + " " + firstName + " " + middleName;
+            
+    }
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
-    }
-
+    
     /**
      * Возвращает адрес, по которому проживает человек.
      * <p>
@@ -51,16 +70,18 @@ public class Person {
      *
      * @return адрес регистрации в виде строки.
      */
-    public String getAddress() {
+    public Address getAddress() {
+        return registration;
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
     }
-    public String getPassport (){
-        
-        
-        return null;
-        
+    public void setAddress(Address registration){
+        this.registration = registration;
+    }
+    
+    @Override
+    public String toString (){
+        return fullName + "; " + passport + registration;
     }
 }
