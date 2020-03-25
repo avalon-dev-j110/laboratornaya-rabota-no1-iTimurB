@@ -58,6 +58,6 @@ public class Passport {
      */
     @Override
     public String toString() {
-        return "Passport №" + passportNumber + "; Date of birth: " + birthday + "; Date of issue: " + dateOFissue + "; Place of issue: " + service + " ";  //To change body of generated methods, choose Tools | Templates.
+        return "| Passport: №" + passportNumber + "; Date of birth: " + birthday + "; Date of issue: " + dateOFissue + "; Place of issue: " + service;  //To change body of generated methods, choose Tools | Templates.
     }
 }

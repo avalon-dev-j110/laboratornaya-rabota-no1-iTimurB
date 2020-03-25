@@ -18,16 +18,14 @@ public class Person {
     private String lastName;
     private String middleName;
     private String secondName;
-    private String fullName;
+    private  String fullName;
     private Address registration;
     private Passport passport;
-    
          
     public Person (String firstName, String middleName, String secondName, String lastName, Passport passport, Address registration){
         this(firstName, middleName, secondName, lastName);
         this.passport = passport;
         this.registration = registration;
-        
     }    
        public Person (String firstName, String middleName, String secondName, String lastName){
            this.firstName = firstName;
@@ -35,7 +33,7 @@ public class Person {
            this.middleName = middleName;
            this.secondName = secondName;
        }
-       
+              
     /**
      * Возвращает полное имя человека.
      * <p>
@@ -49,14 +47,13 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
-       
     String str = " ";
-    public String getfullName(Person o) {
-        if (o.middleName.equals(str)) {
-            return fullName = firstName + " " + secondName + " " + lastName;
+    public String getfullName() {
+        if (middleName.equals(str)) {
+            fullName ="| " + firstName + " " + secondName + " " + lastName;
            }
-           else return fullName = lastName + " " + firstName + " " + middleName;
-            
+           else fullName ="| " + lastName + " " + firstName + " " + middleName;
+        return fullName;
     }
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
@@ -70,6 +67,7 @@ public class Person {
      *
      * @return адрес регистрации в виде строки.
      */
+    
     public Address getAddress() {
         return registration;
         /*
@@ -80,8 +78,9 @@ public class Person {
         this.registration = registration;
     }
     
+    
     @Override
     public String toString (){
-        return fullName + "; " + passport + registration;
+        return getfullName() + passport + registration;
     }
 }

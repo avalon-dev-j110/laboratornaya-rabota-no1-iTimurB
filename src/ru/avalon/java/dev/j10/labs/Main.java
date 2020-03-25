@@ -23,15 +23,26 @@ public class Main {
         persons [0] = ivanov;
         persons [1] = smith;
 
-        System.out.println(persons [0]); 
-        System.out.println(persons [1]);
         
+        System.out.println(persons [0]); 
+        System.out.println(ivanov.getfullName());
+        System.out.println(registration);
+        System.out.println(passportDate);
+              
+        System.out.println(persons [1]);
+        System.out.println(smith.getfullName());  
+        System.out.println(registration1);
+        System.out.println(passportDate1);
+        
+       
+
         //Создаём объект и кладём в переменную
         //Building myBuilding = new Building ("red", 4);
         //Вызываем метод объекта и кладём возвращённое значение в переменную
         //String myBuildingDescription = myBuilding.getBuildigDescription();
         //System.out.println(myBuildingDescription);
-                  
+              
+        
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *
