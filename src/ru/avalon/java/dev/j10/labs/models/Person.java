@@ -18,7 +18,7 @@ public class Person {
     private String lastName;
     private String middleName;
     private String secondName;
-    private  String fullName;
+    private String fullName;
     private Address registration;
     private Passport passport;
          
