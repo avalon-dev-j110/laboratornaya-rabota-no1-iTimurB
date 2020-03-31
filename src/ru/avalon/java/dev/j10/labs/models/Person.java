@@ -33,6 +33,31 @@ public class Person {
            this.middleName = middleName;
            this.secondName = secondName;
        }
+
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getMiddleName() {
+        return middleName;
+    }
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+    public String getSecondName() {
+        return secondName;
+    }
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }              
               
     /**
      * Возвращает полное имя человека.
@@ -47,12 +72,15 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
-    String str = " ";
+   
     public String getfullName() {
-        if (middleName.equals(str)) {
-            fullName ="| " + firstName + " " + secondName + " " + lastName;
+        if (this.middleName == null && this.secondName == null ) {
+            fullName ="| " + this.firstName + " " + this.lastName;
            }
-           else fullName ="| " + lastName + " " + firstName + " " + middleName;
+        else if (this.middleName != null)
+           fullName ="| " + this.lastName + " " + this.firstName + " " + this.middleName;
+        else if (this.secondName != null)
+           fullName ="| " + firstName + " " + secondName + " " + lastName;
         return fullName;
     }
         /*
