@@ -35,6 +35,31 @@ public class Passport {
            this.dateOFissue = dateOFissue;
            this.service = service;
        }
+
+    public int getPassportNumber() {
+        return passportNumber;
+    }
+    public void setPassportNumber(int passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+    public LocalDate getDateOFissue() {
+        return dateOFissue;
+    }
+    public void setDateOFissue(LocalDate dateOFissue) {
+        this.dateOFissue = dateOFissue;
+    }
+    public String getService() {
+        return service;
+    }
+    public void setService(String service) {
+        this.service = service;
+    }
     
     /*
      * TODO(Студент): Закончить определение класса.
@@ -58,6 +83,6 @@ public class Passport {
      */
     @Override
     public String toString() {
-        return "| Passport: №" + passportNumber + "; Date of birth: " + birthday + "; Date of issue: " + dateOFissue + "; Place of issue: " + service;  //To change body of generated methods, choose Tools | Templates.
+        return "| Passport: №" + getPassportNumber() + "; Date of birth: " + getBirthday() + "; Date of issue: " + getDateOFissue() + "; Place of issue: " + getService();  //To change body of generated methods, choose Tools | Templates.
     }
 }
